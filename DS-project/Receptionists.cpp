@@ -1,0 +1,90 @@
+#include "Receptionists.h"
+Time t;
+int nowDay = t.getDay();    // Get the current day
+int nowMonth = t.getMonth(); // Get the current month
+int nowYear = t.getYear();
+int Receptionists::getID()
+{
+	return rID;
+}
+
+string Receptionists::getPassword()
+{
+	return rPassword;
+}
+
+void Receptionists::receptionistMenu()
+{
+}
+
+void Receptionists::retrieve(int id, unordered_map<int, Members>* members)
+{
+	for (auto it = members->begin(); it != members->end(); it++)
+	{
+		if (it->first == id)
+		{
+			cout << "Name: " << it->second.getName();
+			cout << "Date of birth: " << it->second.getDOB();
+			cout << "Renewal date: " <<it->second.getRenewalDate();
+			cout << "Joined classes: "<<it->second.getJoinedClasses();
+			break;
+		}
+	}
+}
+
+void Receptionists::store(unordered_map<int, Members>* members)
+{
+	string name;
+	string password;
+	string dob;
+
+	int ID;
+	cout << "Enter your name: ";
+	cin >> name;
+	cout << "Enter a password: ";
+	cin >> password;
+	cout << "Enter your date of birth: ";
+	cin >> dob;
+	cout << "Subscription options:\n---------------- "
+		<< "1) 1 month ---> 1500 LE\n"
+		<< "2) 3 months ---> 6000 LE\n"
+		<< "3) 6 months ---> 7800 LE\n"
+		<< "4) 1 year ---> 10680 LE\n";
+	int option;
+	float price;
+	int durationInMonths;
+	cin >> option;
+	switch (option)
+	{
+	case 1:
+		price = 1500;
+		durationInMonths = 1;
+		break;
+	case 2:
+		price = 6000;
+		durationInMonths = 3;
+		break;
+	case 3:
+		price = 7800;
+		durationInMonths = 6;
+		break;
+	case 4:
+		price = 10680;
+		durationInMonths = 12;
+		break;
+	default:
+		cout << "Invalid option.\n";
+	}
+	cout << "Enter start date DD-MM-YYYY: ";
+	string startDate;
+	cin >> startDate;
+	string d = startDate.substr(0, 2);
+	string m = to_string((stoi(startDate.substr(3, 5)) + durationInMonths) % 12);
+	string y = (stoi(startDate.substr(3, 5)) + durationInMonths) % 12 == 0 ? startDate.substr(6) : to_string(stoi(startDate.substr(6)) + 1);
+	string endDate = d + "-" + m + "-" + y;
+	Subscription sub(price, durationInMonths, startDate, endDate);
+	ID = (*members).size() + 1;
+	cout << "Your ID is " << ID;
+	Members newMember(name, ID, password, dob, sub); 
+	(*members).insert(make_pair(ID, newMember));
+}
