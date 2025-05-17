@@ -68,9 +68,11 @@ void Paddle::displaySlot(Slot s)
     cout << "Slot " << s.slotID << ": " << s.time << endl;
 }
 
-bool Paddle::isDateValid(int day, int month, int year)
+bool Paddle::isDateValid(int day, int month, int year , bool isVIP)
 {
-    for (int i = 0; i < 7; i++)
+    //if vip then they can book a court 14 days beforehand not only 7
+    int daysAllowed = isVIP ? 14 : 7;
+    for (int i = 0; i < daysAllowed; i++)
     {
         tm temp = {};
         temp.tm_year = nowYear - 1900;
@@ -114,7 +116,7 @@ void Paddle::displayAvailableSlots(vector<Slot> slots)
     }
 }
 
-void Paddle::bookingCourt(vector<Location>& locations)
+void Paddle::bookingCourt(vector<Location>& locations , bool isVIP )
 {
     Location l;
     cout << "Which location?\n1- Tagamoa\n2- Almaza\nChoice: ";
@@ -131,7 +133,7 @@ void Paddle::bookingCourt(vector<Location>& locations)
     while (true)
     {
         cin >> day >> month >> year;
-        if (isDateValid(day, month, year)) break;
+        if (isDateValid(day, month, year , isVIP)) break;
         cout << "Invalid date. Try again: ";
     }
 
@@ -191,7 +193,7 @@ void Paddle::bookingCourt(vector<Location>& locations)
 }
 
 
-void Paddle::cancelBookingByID(int bookingID)
+void Paddle::cancelBookingByID(int bookingID , bool isVIP)
 {
     auto it = bookingRegistry.find(bookingID);
     if (it == bookingRegistry.end())
@@ -207,7 +209,8 @@ void Paddle::cancelBookingByID(int bookingID)
         return;
     }
     int time = stoi(s->time.substr(0,2));
-    if (nowHour + 3 <= time)
+    int cancelWindow = isVIP ? 1 : 3; // VIP: can cancel 1 hour beforehand , Regular: 3 hours 
+    if (nowHour + cancelWindow <= time)
     {
         s->isBooked = false;
         s->bookingID = -1;

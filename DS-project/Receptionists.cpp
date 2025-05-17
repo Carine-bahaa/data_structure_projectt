@@ -37,44 +37,96 @@ void Receptionists::store(unordered_map<int, Members>* members)
 	string name;
 	string password;
 	string dob;
-
+	bool VIPstatus;
+	char vipChoice
 	int ID;
+	int option;
+	float price;
+	int durationInMonths;
+
 	cout << "Enter your name: ";
 	cin >> name;
 	cout << "Enter a password: ";
 	cin >> password;
 	cout << "Enter your date of birth: ";
 	cin >> dob;
-	cout << "Subscription options:\n---------------- "
-		<< "1) 1 month ---> 1500 LE\n"
-		<< "2) 3 months ---> 6000 LE\n"
-		<< "3) 6 months ---> 7800 LE\n"
-		<< "4) 1 year ---> 10680 LE\n";
-	int option;
-	float price;
-	int durationInMonths;
-	cin >> option;
-	switch (option)
+	cout << "Do you want to be a VIP Memebr ? (y/n) ";
+	cin >> vipChoice;
+	if (vipChoice == 'y' || vipChoice == 'Y')
 	{
-	case 1:
-		price = 1500;
-		durationInMonths = 1;
-		break;
-	case 2:
-		price = 6000;
-		durationInMonths = 3;
-		break;
-	case 3:
-		price = 7800;
-		durationInMonths = 6;
-		break;
-	case 4:
-		price = 10680;
-		durationInMonths = 12;
-		break;
-	default:
-		cout << "Invalid option.\n";
+		VIPstatus = true;
 	}
+	else if (vipChoice == 'n' || vipChoice == 'N')
+	{
+		VIPstatus = false;
+	}
+	else
+	{
+		cout << "Invalid choice. Defaulting to non-VIP status.\n";
+		VIPstatus = false;
+	}
+	if (VIPstatus)
+	{
+		cout << "Subscription options:\n---------------- "
+			<< "1) 1 month --->  1800 LE\n"
+			<< "2) 3 months ---> 7200 LE\n"
+			<< "3) 6 months ---> 9360 LE\n"
+			<< "4) 1 year ---> 12816 LE\n";
+		cin >> option;
+		switch (option)
+		{
+		case 1:
+			price = 1800;
+			durationInMonths = 1;
+			break;
+		case 2:
+			price = 7200;
+			durationInMonths = 3;
+			break;
+		case 3:
+			price = 9360;
+			durationInMonths = 6;
+			break;
+		case 4:
+			price = 12816;
+			durationInMonths = 12;
+			break;
+		default:
+			cout << "Invalid option.\n";
+		}
+	}
+	else
+	{
+		cout << "Subscription options:\n---------------- "
+			<< "1) 1 month ---> 1500 LE\n"
+			<< "2) 3 months ---> 6000 LE\n"
+			<< "3) 6 months ---> 7800 LE\n"
+			<< "4) 1 year ---> 10680 LE\n";
+		cin >> option; 
+		switch (option)
+		{
+		case 1:
+			price = 1500;
+			durationInMonths = 1;
+			break;
+		case 2:
+			price = 6000;
+			durationInMonths = 3;
+			break;
+		case 3:
+			price = 7800;
+			durationInMonths = 6;
+			break;
+		case 4:
+			price = 10680;
+			durationInMonths = 12;
+			break;
+		default:
+			cout << "Invalid option.\n";
+		}
+	}
+	
+	
 	cout << "Enter start date DD-MM-YYYY: ";
 	string startDate;
 	cin >> startDate;
@@ -85,6 +137,6 @@ void Receptionists::store(unordered_map<int, Members>* members)
 	Subscription sub(price, durationInMonths, startDate, endDate);
 	ID = (*members).size() + 1;
 	cout << "Your ID is " << ID;
-	Members newMember(name, ID, password, dob, sub); 
+	Members newMember(name, ID, password, dob, sub , VIPstatus); 
 	(*members).insert(make_pair(ID, newMember));
 }

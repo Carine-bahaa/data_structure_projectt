@@ -46,7 +46,7 @@ void Manager::store(unordered_map<int, Members>* members)
 	(*members).insert(make_pair(ID, newMember));
 }
 
-void Manager::assignClassToCoach(unordered_map<int, ClassSessions>* classSession)
+void Manager::assignClassToCoach(unordered_map<int, ClassSessions>& classSession)
 {
 	int classID;
 	string className;

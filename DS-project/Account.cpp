@@ -5,7 +5,7 @@
 #include"SystemManager.h"
 using namespace std;
 
-void Account::login(unordered_map<int, Members>* members, unordered_map<int, Coaches>* coaches, int id, string password, string role)
+void Account::login(unordered_map<int, Members>* members, unordered_map<int, Coaches>* coaches, unordered_map<int, ClassSessions>* classSessions,int id, string password, string role)
 {
     if (role == "Member")
     {
@@ -39,6 +39,7 @@ void Account::login(unordered_map<int, Members>* members, unordered_map<int, Coa
         if (id == m.getID() && password == m.getPassword())
         {
             m.managerMenu();
+			m.assignClassToCoach(classSessions);
             found = true;
         }
         else if (id == r.getID() && password == r.getPassword())
@@ -53,6 +54,7 @@ void Account::login(unordered_map<int, Members>* members, unordered_map<int, Coa
                 if (it->first == id && it->second.getPassword() == password)
                 {
                     it->second.coachMenu();
+                    it->second.reSchedulesEachMonth();
                     found = true;
                     break;
                 }

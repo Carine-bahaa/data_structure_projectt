@@ -34,13 +34,13 @@ public:
     };
     vector<Location> locations;
     vector<Location> initializer(vector<Location>& locations);
-    void bookingCourt(vector<Location>& locations);
-    void cancelBookingByID(int bookingID);
+    void bookingCourt(vector<Location>& locations , bool isVIP);
+    void cancelBookingByID(int bookingID , bool isVIP);
 
 private:
     bool isSlotAvailable(Slot);
     void displaySlot(Slot);
-    bool isDateValid(int day, int month, int year);
+    bool isDateValid(int day, int month, int year , bool isVIP);
     int countAvailableSlots(Court c, string);
     void displayConfirmation(string, string, string, string, int);
     void displayAvailableSlots(vector<Slot> slots);

@@ -2,7 +2,7 @@
 Time t;
 int nowDay = t.getDay();    // Get the current day
 int nowMonth = t.getMonth(); // Get the current month
-int nowYear = t.getYear();
+int nowYear = t.getYear(); // Get the current year
 
 Subscription::Subscription(double price, int duration, string start, string end)
     : price(price), duration(duration), startDate(start), endDate(end) {}

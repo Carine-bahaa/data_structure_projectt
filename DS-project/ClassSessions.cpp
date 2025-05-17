@@ -14,17 +14,22 @@ bool ClassSessions::isFull()
 	return capacity == joined.size();
 }
 
-void ClassSessions::cancel(int id)
+void ClassSessions::cancel(int id , bool isVIP)
 {
 	for (auto it = joined.begin(); it != joined.end(); it++)
 	{
 		if (id == *it)
 		{
 			joined.erase(id);
-			if (!waitlist.empty())
+			if (isVIP && !VIPwaitlist.empty())
 			{
 				joined.insert(id);
-				waitlist.pop();
+				VIPwaitlist.pop();
+			}
+			else (!waitlist.empty())
+			{
+			    joined.insert(id);
+				waitlist.pop(); 
 			}
 			break;
 		}
@@ -35,18 +40,33 @@ void ClassSessions::cancel(int id)
 	}
 }
 
-void ClassSessions::joinClass(int id)
+void ClassSessions::joinClass(int id , bool isVIP)
 {
-	if (!isFull())
+	if (!isFull()) {
 		joined.insert(id);
-	else
-		waitlist.push(id);
+		cout << "You have successfully joined the class: " << it->second.getClassName() << endl;
+	}
+		
+	else {
+		if (isVIP) {
+
+			VIPwaitlist.push(id);
+		}
+		else {
+			waitlist.push(id);
+		}
+		
+		
+		cout << "The class is full. You have been added to the waitlist." << endl;
+	}
+		
 }
 
 void ClassSessions::setClassSchedule(string date)
 {
 	classScheduleDate = date;
 }
+
 string ClassSessions::getClassSchedule()
 {
 	return classScheduleDate;

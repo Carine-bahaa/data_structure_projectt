@@ -18,13 +18,14 @@ class ClassSessions
 	unordered_set<int> joined;
 	Coaches assignedCoach;
 	string classScheduleDate;
+	queue<int> VIPwaitlist;
 
 
 public:
-	ClassSessions(int classID, string className, string coachName, int coachID);
+	ClassSessions(int classID, string className, string coachName, int coachID, string classScheduleDate);
 	bool isFull(); 
-	void cancel(int);
-	void joinClass(int);
+	void cancel(int , bool);
+	void joinClass(int , bool);
 	//class schedule
 	void setClassSchedule(string date);
 	string getClassSchedule();
