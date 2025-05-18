@@ -1,0 +1,127 @@
+﻿  Account.cpp
+C:\Users\user\source\repos\project\ClassSessions.h(18,10): error C2079: 'ClassSessions::assignedCoach' uses undefined class 'Coaches'
+  (compiling source file 'Account.cpp')
+  
+  ClassSessions.cpp
+  Coaches.cpp
+C:\Users\user\source\repos\project\Manager.h(15,40): error C2065: 'Members': undeclared identifier
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Manager.h(15,21): error C2923: 'std::unordered_map': 'Members' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Coaches.cpp')
+      C:\Users\user\source\repos\project\Manager.h(15,40):
+      see declaration of 'Members'
+  
+C:\Users\user\source\repos\project\Manager.h(15,21): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Coaches.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\user\source\repos\project\Manager.h(16,32): error C2065: 'Members': undeclared identifier
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Manager.h(16,13): error C2923: 'std::unordered_map': 'Members' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Coaches.cpp')
+      C:\Users\user\source\repos\project\Manager.h(16,32):
+      see declaration of 'Members'
+  
+C:\Users\user\source\repos\project\Manager.h(16,13): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Coaches.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\user\source\repos\project\Manager.h(17,38): error C2065: 'Members': undeclared identifier
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Manager.h(17,19): error C2923: 'std::unordered_map': 'Members' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Coaches.cpp')
+      C:\Users\user\source\repos\project\Manager.h(17,38):
+      see declaration of 'Members'
+  
+C:\Users\user\source\repos\project\Manager.h(17,19): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Coaches.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\user\source\repos\project\Manager.h(19,45): error C2065: 'ClassSessions': undeclared identifier
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Manager.h(19,26): error C2923: 'std::unordered_map': 'ClassSessions' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Coaches.cpp')
+      C:\Users\user\source\repos\project\Manager.h(19,45):
+      see declaration of 'ClassSessions'
+  
+C:\Users\user\source\repos\project\Manager.h(19,26): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Coaches.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\user\source\repos\project\Account.h(18,70): error C2065: 'Coaches': undeclared identifier
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Account.h(18,51): error C2923: 'std::unordered_map': 'Coaches' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Coaches.cpp')
+      C:\Users\user\source\repos\project\Account.h(18,70):
+      see declaration of 'Coaches'
+  
+C:\Users\user\source\repos\project\Account.h(18,51): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Coaches.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\user\source\repos\project\Account.h(18,108): error C2065: 'ClassSessions': undeclared identifier
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Account.h(18,89): error C2923: 'std::unordered_map': 'ClassSessions' is not a valid template type argument for parameter '_Ty'
+  (compiling source file 'Coaches.cpp')
+      C:\Users\user\source\repos\project\Account.h(18,108):
+      see declaration of 'ClassSessions'
+  
+C:\Users\user\source\repos\project\Account.h(18,89): error C2976: 'std::unordered_map': too few template arguments
+  (compiling source file 'Coaches.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\unordered_map(61,7):
+      see declaration of 'std::unordered_map'
+  
+C:\Users\user\source\repos\project\ClassSessions.h(18,10): error C2079: 'ClassSessions::assignedCoach' uses undefined class 'Coaches'
+  (compiling source file 'Coaches.cpp')
+  
+C:\Users\user\source\repos\project\Coaches.cpp(145,9): error C2360: initialization of 'choice' is skipped by 'case' label
+      C:\Users\user\source\repos\project\Coaches.cpp(142,18):
+      see declaration of 'choice'
+  
+C:\Users\user\source\repos\project\Coaches.cpp(148,9): error C2361: initialization of 'choice' is skipped by 'default' label
+      C:\Users\user\source\repos\project\Coaches.cpp(142,18):
+      see declaration of 'choice'
+  
+  Manager.cpp
+C:\Users\user\source\repos\project\ClassSessions.h(18,10): error C2079: 'ClassSessions::assignedCoach' uses undefined class 'Coaches'
+  (compiling source file 'Manager.cpp')
+  
+C:\Users\user\source\repos\project\Manager.cpp(122,15): error C2374: 'sub': redefinition; multiple initialization
+      C:\Users\user\source\repos\project\Manager.cpp(37,15):
+      see declaration of 'sub'
+  
+C:\Users\user\source\repos\project\Manager.cpp(122,15): error C2086: 'Subscription sub': redefinition
+      C:\Users\user\source\repos\project\Manager.cpp(37,15):
+      see declaration of 'sub'
+  
+C:\Users\user\source\repos\project\Manager.cpp(123,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\user\source\repos\project\Manager.cpp(134,10): warning C4129: ' ': unrecognized character escape sequence
+  Members.cpp
+C:\Users\user\source\repos\project\ClassSessions.h(18,10): error C2079: 'ClassSessions::assignedCoach' uses undefined class 'Coaches'
+  (compiling source file 'Members.cpp')
+  
+  Paddle.cpp
+  Receptionists.cpp
+C:\Users\user\source\repos\project\ClassSessions.h(18,10): error C2079: 'ClassSessions::assignedCoach' uses undefined class 'Coaches'
+  (compiling source file 'Receptionists.cpp')
+  
+C:\Users\user\source\repos\project\Receptionists.cpp(138,22): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\user\source\repos\project\Receptionists.cpp(149,10): warning C4129: ' ': unrecognized character escape sequence
+  Source.cpp
+C:\Users\user\source\repos\project\ClassSessions.h(18,10): error C2079: 'ClassSessions::assignedCoach' uses undefined class 'Coaches'
+  (compiling source file 'Source.cpp')
+  
+  Subscription.cpp
+  Time.cpp
+  Generating Code...
